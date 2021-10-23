@@ -100,14 +100,18 @@ class Stack:
 
     def __repr__(self):
         node = self.head
-        napis = ""
-        while node is not None:
-            if node.next != None:
-                napis += "|"+str(node.value)+"|""\n"
-            if node.next == None:
-                napis += "|"+str(node.value)+"|"
+        napis = []
+        napis2 =""
+        a = len(self)
+        while node != None:
+            napis.append(node.value)
             node = node.next
-        return napis
+        for x in range(a):
+            if(x==a-1):
+                napis2 += "|" + str(napis[a-x-1]) + "|"
+            else:
+                napis2+="|"+str(napis[a-x-1])+"|\n"
+        return napis2
 
     def push(self, element: Any) -> None:
         if self.head == None:
