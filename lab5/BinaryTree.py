@@ -109,11 +109,10 @@ def all_paths(tree):
     if tree.root == None:
         return
 
-    root = tree.root
     stack = []
     a = []
     b = []
-    stack.append((root, b))
+    stack.append((tree.root, b))
 
     while stack:
         c, b = stack.pop()
